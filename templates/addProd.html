@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/add" method="post">
+        <label for="nome">Nome do produto</label>
+        <input type="text" name="nome" id="nome" placeholder="{{ .NomeProd }}">
+
+        <label for="preco">Preço do produto</label>
+        <input type="number" name="preco" id="preco" placeholder="{{ .Preco }}">
+
+        <label for="val">Validade do produto</label>
+        <input type="number" name="val" id="val" placeholder="{{ .ValAno }}">
+
+        <label for="code">Codego de barra do produto</label>
+        <input type="number" name="code" id="code" placeholder="{{ .CodeBar }}">
+
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
