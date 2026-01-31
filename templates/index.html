@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
     <title>Document</title>
 </head>
 <body>
+
+    <a href="/add" id="newProdu" href="start">
+        +
+    </a>
     <!--
         Struct slice -> struct -> coluns struct
         viewAll -> Coluns -> NomeProd
     -->
     {{ range .ViewAll }}
-        <div>
+        <div class="divInfo">
             <h1>{{ .NomeProd }}</h1>
-            <ul>
+            <ul style="list-style: none;">
                 <li>
-                    <p>Preço: {{ .Preco }}</p>
+                    <p>Preço: R$ {{ .Preco }}</p>
                 </li>
                 <li>
                     <p>Ano de vencimento: {{ .ValAno }}</p>
@@ -26,5 +31,6 @@
             </ul>
         </div>
     {{ end }}
+    <a href="start" id="goToStart">^</a>
 </body>
 </html>

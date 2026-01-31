@@ -23,20 +23,28 @@ func addProd(w http.ResponseWriter, req *http.Request) {
 	if req.Method == "POST" {
 
 		req.ParseForm()
-		data.NomeProd = req.Form.Get("nome")
 		preco, _ := strconv.Atoi(req.Form.Get("preco"))
 		val, _ := strconv.Atoi(req.Form.Get("val"))
 		code, _ := strconv.Atoi(req.Form.Get("code"))
-		data.Preco = preco
-		data.ValAno = val
-		data.CodeBar = code
+		if !(preco == 0 || val == 0 || code == 0 || req.Form.Get("nome") == "") {
+
+			data.NomeProd = req.Form.Get("nome")
+			data.Preco = preco
+			data.ValAno = val
+			data.CodeBar = code
+			crud.Insert(data)
+			http.Redirect(w, req, "/", http.StatusSeeOther)
+		}
+
 	}
-	crud.Insert(data)
 	tmpl := template.Must(template.ParseFiles(baseUrlTemplateFolder + "addProd.html"))
 	tmpl.Execute(w, data)
 }
 func main() {
 	mux := http.NewServeMux()
+
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+
 	mux.HandleFunc("/", index)
 	mux.HandleFunc("/add", addProd)
 	http.ListenAndServe(":8090", mux)

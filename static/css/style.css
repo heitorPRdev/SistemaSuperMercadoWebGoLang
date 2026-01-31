@@ -1,0 +1,50 @@
+body{
+    
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: Arial;
+    background-color: whitesmoke;
+
+}
+.divInfo{
+    width: 50%;
+    padding: 5px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 3px rgb(123, 123, 123);
+    margin-top: 15px;
+    border: solid;
+    border-color: rgb(124, 124, 124);
+    
+}
+.divInfo:hover{
+    
+    transition: all 0.4s 0.3s;
+    box-shadow: 10px 15px 15px rgb(46, 46, 46);
+}
+#newProdu{
+    margin: auto;
+    font-size: 20px;
+    background-color: rgb(0, 140, 0);
+
+    color: rgb(255, 255, 255);
+    padding: 7px;
+    margin-left: 25%;
+    margin-right: 50%;
+    border-radius: 50%;
+    text-decoration: none;
+}
+#goToStart{
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    color: rgb(255, 255, 255);
+    padding: 30px;
+    
+    border-radius: 50%;
+    text-decoration: none;
+    margin-bottom: 50px;
+    position: absolute;
+    top: auto;
+}
